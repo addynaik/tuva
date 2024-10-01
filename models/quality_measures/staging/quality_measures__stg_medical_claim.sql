@@ -53,7 +53,7 @@ from {{ ref('core__medical_claim') }}
         , cast(null as {{ dbt.type_string() }} ) as hcpcs_modifier_4
         , cast(null as {{ dbt.type_string() }} ) as hcpcs_modifier_5
         , cast(null as {{ dbt.type_timestamp() }} ) as tuva_last_run
-{% else %}
+{%- else -%}
 select
          cast(null as {{ dbt.type_string() }} ) as patient_id
         , cast(null as {{ dbt.type_string() }} ) as claim_id

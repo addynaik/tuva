@@ -70,7 +70,7 @@ from {{ ref('core__stg_clinical_medication')}} meds
         and meds.source_code = rxatc.rxcui
 
 
-{% else %}
+{%- else -%}
 
  select
      meds.medication_id

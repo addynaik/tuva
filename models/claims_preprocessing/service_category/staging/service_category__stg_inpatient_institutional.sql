@@ -41,7 +41,7 @@ inner join bill_type_requirement as d
 
 {% if target.type == 'fabric' %}
 union
-{% else %}
+{%- else -%}
 union distinct
 {% endif %}
 

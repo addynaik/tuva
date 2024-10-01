@@ -62,7 +62,7 @@ with denominator as (
    {% if target.type == 'fabric' %}
         and result LIKE '%.%' OR result LIKE '%[0-9]%'
         AND result NOT LIKE '%[^0-9.]%'
-    {% else %}
+    {%- else -%}
         and {{ apply_regex('result', '^[+-]?([0-9]*[.])?[0-9]+$') }}
     {% endif %}
 

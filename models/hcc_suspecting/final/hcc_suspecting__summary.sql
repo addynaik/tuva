@@ -11,7 +11,7 @@ with patients as (
         , birth_date
         {% if target.type == 'fabric' %}
             , floor({{ datediff('birth_date', 'GETDATE()', 'hour') }} / 8766.0) as age
-        {% else %}
+        {%- else -%}
             , floor({{ datediff('birth_date', 'current_date', 'hour') }} / 8766.0) as age
         {% endif %}
     from {{ ref('hcc_suspecting__stg_core__patient') }}

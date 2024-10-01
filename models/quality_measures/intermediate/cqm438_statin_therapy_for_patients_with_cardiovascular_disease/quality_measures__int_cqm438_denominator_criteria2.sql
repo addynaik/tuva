@@ -109,7 +109,7 @@ with cholesterol_codes as (
    {% if target.type == 'fabric' %}
         WHERE result LIKE '%.%' OR result LIKE '%[0-9]%'
         AND result NOT LIKE '%[^0-9.]%'
-    {% else %}
+    {%- else -%}
         where {{ apply_regex('result', '^[+-]?([0-9]*[.])?[0-9]+$') }}
     {% endif %}
 

@@ -31,7 +31,7 @@ from {{ ref('core__pharmacy_claim') }}
         , cast(null as {{ dbt.type_string() }} ) as ndc_code
         , {{ try_to_cast_date('null', 'YYYY-MM-DD') }} as paid_date
         , cast(null as {{ dbt.type_string() }} ) as data_source
-{% else %}
+{%- else -%}
     select
           cast(null as {{ dbt.type_string() }} ) as patient_id
         , {{ try_to_cast_date('null', 'YYYY-MM-DD') }} as dispensing_date

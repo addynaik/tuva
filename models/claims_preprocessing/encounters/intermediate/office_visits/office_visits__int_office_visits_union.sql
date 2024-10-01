@@ -13,7 +13,7 @@ from {{ ref('office_visits__int_office_visits_radiology') }}
 
 {% if target.type == 'fabric' %}
 union
-{% else %}
+{%- else -%}
 union distinct
 {% endif %}
 
@@ -26,7 +26,7 @@ from {{ ref('office_visits__int_office_visits_surgery') }}
 
 {% if target.type == 'fabric' %}
 union
-{% else %}
+{%- else -%}
 union distinct
 {% endif %}
 
@@ -39,7 +39,7 @@ from {{ ref('office_visits__int_office_visits_injections') }}
 
 {% if target.type == 'fabric' %}
 union
-{% else %}
+{%- else -%}
 union distinct
 {% endif %}
 
@@ -52,7 +52,7 @@ from {{ ref('office_visits__int_office_visits_ptotst') }}
 
 {% if target.type == 'fabric' %}
 union
-{% else %}
+{%- else -%}
 union distinct
 {% endif %}
 
@@ -65,7 +65,7 @@ from {{ ref('office_visits__int_office_visits_em') }}
 
 {% if target.type == 'fabric' %}
 union
-{% else %}
+{%- else -%}
 union distinct
 {% endif %}
 
@@ -78,7 +78,7 @@ from {{ ref('office_visits__int_office_visits_telehealth') }}
 
 {% if target.type == 'fabric' %}
 union
-{% else %}
+{%- else -%}
 union distinct
 {% endif %}
 

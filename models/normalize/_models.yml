@@ -1,14 +1,13 @@
 version: 2
 
 models:
-
   - name: normalize__all_unmapped
     description: >
       unmapped condition codes
     config:
       schema: |
         {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_normalize
-        {% else %}normalize{%- endif -%}
+        {%- else -%}normalize{%- endif -%}
       alias: all_unmapped
       tags: normalized
       materialized: table
@@ -19,11 +18,10 @@ models:
     config:
       schema: |
         {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_normalize
-        {% else %}normalize{%- endif -%}
+        {%- else -%}normalize{%- endif -%}
       alias: all_codes
       tags: normalized
       materialized: view
-
 
   - name: normalize__unmapped_condition
     description: >
@@ -31,7 +29,7 @@ models:
     config:
       schema: |
         {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_normalize
-        {% else %}normalize{%- endif -%}
+        {%- else -%}normalize{%- endif -%}
       alias: unmapped_condition
       tags: normalize
       materialized: table
@@ -42,7 +40,7 @@ models:
     config:
       schema: |
         {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_normalize
-        {% else %}normalize{%- endif -%}
+        {%- else -%}normalize{%- endif -%}
       alias: unmapped_procedure
       tags: normalize
       materialized: table
@@ -53,7 +51,7 @@ models:
     config:
       schema: |
         {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_normalize
-        {% else %}normalize{%- endif -%}
+        {%- else -%}normalize{%- endif -%}
       alias: unmapped_lab_result
       tags: normalized
       materialized: table
@@ -64,7 +62,7 @@ models:
     config:
       schema: |
         {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_normalize
-        {% else %}normalize{%- endif -%}
+        {%- else -%}normalize{%- endif -%}
       alias: unmapped_medication
       tags: normalized
       materialized: table
@@ -75,14 +73,10 @@ models:
     config:
       schema: |
         {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_core
-        {% else %}normalize{%- endif -%}
+        {%- else -%}normalize{%- endif -%}
       alias: unmapped_observation
       tags: normalized
       materialized: table
-      
-
-
-
 
   - name: normalize__stg_unmapped_condition
     description: >

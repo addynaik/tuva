@@ -16,7 +16,7 @@ from {{ ref('normalized_input__stg_medical_claim') }} med
 left join {{ ref('terminology__revenue_center') }} rev
     {% if target.type == 'fabric' %}
         on RIGHT(REPLICATE('0', 4) + med.revenue_center_code, 4) = rev.revenue_center_code
-    {% else %}
+    {%- else -%}
         on lpad(med.revenue_center_code, 4, '0') = rev.revenue_center_code
     {% endif %}
 where claim_type = 'institutional'

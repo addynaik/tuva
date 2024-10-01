@@ -87,7 +87,7 @@ left join {{ ref('terminology__snomed_ct') }} snomed_ct
 
 {#  This code is only exectued if an enable_normalize_engine var is defined and set to true
     it expects a seed file called  #}
-{% else %}
+{%- else -%}
 select
     all_conditions.condition_id
   , all_conditions.patient_id

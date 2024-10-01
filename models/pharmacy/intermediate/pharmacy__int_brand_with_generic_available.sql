@@ -10,6 +10,6 @@ where
     ndc_product_tty in ('SCD', 'GPCK')
     {% if target.type == 'fabric' %}
         and cast(product_startmarketingdate as date) <= GETDATE()
-    {% else %}
+    {%- else -%}
         and cast(product_startmarketingdate as date) <= current_date
 {% endif %}

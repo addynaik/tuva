@@ -1,11 +1,11 @@
 version: 2
 
 models:
-## Final
+  ## Final
   - name: quality_measures__summary_counts
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: summary_counts
       tags: quality_measures
       materialized: table
@@ -51,7 +51,7 @@ models:
   - name: quality_measures__summary_long
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: summary_long
       tags: quality_measures
       materialized: table
@@ -115,7 +115,7 @@ models:
   - name: quality_measures__summary_wide
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: summary_wide
       tags: quality_measures
       materialized: table
@@ -185,11 +185,11 @@ models:
       - name: tuva_last_run
         description: The date and timestamp of the dbt run.
 
-## Shared Exclusions
+  ## Shared Exclusions
   - name: quality_measures__int_shared_exclusions_frailty
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_shared_exclusions_frailty
       tags: quality_measures
       materialized: table
@@ -199,7 +199,7 @@ models:
   - name: quality_measures__int_shared_exclusions_advanced_illness
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_shared_exclusions_advanced_illness
       tags: quality_measures
       materialized: table
@@ -209,7 +209,7 @@ models:
   - name: quality_measures__int_shared_exclusions_dementia
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_shared_exclusions_dementia
       tags: quality_measures
       materialized: table
@@ -219,7 +219,7 @@ models:
   - name: quality_measures__int_shared_exclusions_hospice_palliative
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_shared_exclusions_hospice_palliative
       tags: quality_measures
       materialized: table
@@ -229,19 +229,19 @@ models:
   - name: quality_measures__int_shared_exclusions_institutional_snp
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_shared_exclusions_institutional_snp
       tags: quality_measures
       materialized: table
     description: >
-      Exclusion logic for patients staying in an institution for the reporting for entire patient population. 
+      Exclusion logic for patients staying in an institution for the reporting for entire patient population.
 
-## Intermediate
-### Breast Cancer Screening
+  ## Intermediate
+  ### Breast Cancer Screening
   - name: quality_measures__int_nqf2372__performance_period
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_nqf2372__performance_period
       tags: quality_measures
       materialized: view
@@ -251,7 +251,7 @@ models:
   - name: quality_measures__int_nqf2372_denominator
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_nqf2372_denominator
       tags: quality_measures
       materialized: table
@@ -285,7 +285,7 @@ models:
   - name: quality_measures__int_nqf2372_exclude_mastectomy
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_nqf2372_exclude_mastectomy
       tags: quality_measures
       materialized: table
@@ -308,7 +308,7 @@ models:
   - name: quality_measures__int_nqf2372_exclusions
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_nqf2372_exclusions
       tags: quality_measures
       materialized: table
@@ -336,7 +336,7 @@ models:
   - name: quality_measures__int_nqf2372_long
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_nqf2372_long
       tags: quality_measures
       materialized: table
@@ -389,7 +389,7 @@ models:
   - name: quality_measures__int_nqf2372_numerator
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_nqf2372_numerator
       tags: quality_measures
       materialized: table
@@ -420,11 +420,11 @@ models:
       - name: tuva_last_run
         description: The date and timestamp of the dbt run.
 
-### Colorectal Cancer Screening
+  ### Colorectal Cancer Screening
   - name: quality_measures__int_nqf0034_denominator
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_nqf0034_denominator
       tags: quality_measures
       materialized: table
@@ -444,7 +444,7 @@ models:
   - name: quality_measures__int_nqf0034_exclude_colectomy_cancer
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_nqf0034_exclude_colectomy_cancer
       tags: quality_measures
       materialized: table
@@ -457,7 +457,8 @@ models:
       - name: exclusion_date
         description: Date of event or service that excludes patient from the measure.
       - name: exclusion_reason
-        description: Reason (usually the value set concept name) that excludes patient 
+        description:
+          Reason (usually the value set concept name) that excludes patient
           from the measure.
       - name: exclusion_type
         description: Measure specific exclusion for historical record of colectomy cancer.
@@ -467,7 +468,7 @@ models:
   - name: quality_measures__int_nqf0034_exclusions
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_nqf0034_exclusions
       tags: quality_measures
       materialized: table
@@ -494,7 +495,7 @@ models:
   - name: quality_measures__int_nqf0034_long
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_nqf0034_long
       tags: quality_measures
       materialized: table
@@ -547,7 +548,7 @@ models:
   - name: quality_measures__int_nqf0034_numerator
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_nqf0034_numerator
       tags: quality_measures
       materialized: table
@@ -561,24 +562,25 @@ models:
         description: >
           Date of event or service that places patient in the numerator.
       - name: evidence
-        description: Reason (usually the value set concept name) that includes patient 
+        description:
+          Reason (usually the value set concept name) that includes patient
           from the measure.
 
   - name: quality_measures__int_nqf0034__performance_period
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_nqf0034__performance_period
       tags: quality_measures
       materialized: view
     description: >
       Performance Period definition for NQF 0034 Colorectal Cancer screening.
 
-### Diabetes Hemoglobin a1c
+  ### Diabetes Hemoglobin a1c
   - name: quality_measures__int_nqf0059__performance_period
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_nqf0059__performance_period
       tags: quality_measures
       materialized: view
@@ -588,7 +590,7 @@ models:
   - name: quality_measures__int_nqf0059_denominator
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_nqf0059_denominator
       tags: quality_measures
       materialized: table
@@ -619,7 +621,7 @@ models:
   - name: quality_measures__int_nqf0059_exclusions
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_nqf0059_exclusions
       tags: quality_measures
       materialized: table
@@ -646,7 +648,7 @@ models:
   - name: quality_measures__int_nqf0059_long
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_nqf0059_long
       tags: quality_measures
       materialized: table
@@ -698,7 +700,7 @@ models:
   - name: quality_measures__int_nqf0059_numerator
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_nqf0059_numerator
       tags: quality_measures
       materialized: table
@@ -731,11 +733,11 @@ models:
       - name: tuva_last_run
         description: The date and timestamp of the dbt run.
 
-### Controlling Blood Pressure
+  ### Controlling Blood Pressure
   - name: quality_measures__int_cqm236__performance_period
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_cqm236__performance_period
       tags: quality_measures
       materialized: view
@@ -745,7 +747,7 @@ models:
   - name: quality_measures__int_cqm236_denominator
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_cqm236_denominator
       tags: quality_measures
       materialized: table
@@ -776,7 +778,7 @@ models:
   - name: quality_measures__int_cqm236_exclude_procedures_observations
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_cqm236_exclude_procedures_observations
       tags: quality_measures
       materialized: table
@@ -787,7 +789,7 @@ models:
   - name: quality_measures__int_cqm236_exclusions
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_cqm236_exclusions
       tags: quality_measures
       materialized: table
@@ -814,7 +816,7 @@ models:
   - name: quality_measures__int_cqm236_numerator
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_cqm236_numerator
       tags: quality_measures
       materialized: table
@@ -847,7 +849,7 @@ models:
   - name: quality_measures__int_cqm236_long
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_cqm236_long
       tags: quality_measures
       materialized: table
@@ -896,11 +898,11 @@ models:
       - name: tuva_last_run
         description: The date and timestamp of the dbt run.
 
-### Osteoporosis Management in women who had a fracture
+  ### Osteoporosis Management in women who had a fracture
   - name: quality_measures__int_nqf0053__performance_period
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_nqf0053__performance_period
       tags: quality_measures
       materialized: view
@@ -910,7 +912,7 @@ models:
   - name: quality_measures__int_nqf0053_denominator
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_nqf0053_denominator
       tags: quality_measures
       materialized: table
@@ -943,7 +945,7 @@ models:
   - name: quality_measures__int_nqf0053_numerator
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_nqf0053_numerator
       tags: quality_measures
       materialized: table
@@ -979,7 +981,7 @@ models:
   - name: quality_measures__int_nqf0053_exclusions_stage_1
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_nqf0053_exclusions_stage_1
       tags: quality_measures
       materialized: table
@@ -1005,7 +1007,7 @@ models:
   - name: quality_measures__int_nqf0053_exclusions
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_nqf0053_exclusions
       tags: quality_measures
       materialized: table
@@ -1032,7 +1034,7 @@ models:
   - name: quality_measures__int_nqf0053_exclude_procedures_medications
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_nqf0053_exclude_procedures_medications
       tags: quality_measures
       materialized: table
@@ -1045,7 +1047,8 @@ models:
       - name: exclusion_date
         description: Date of event or service that excludes patient from the measure.
       - name: exclusion_reason
-        description: Reason (usually the value set concept name) that excludes patient 
+        description:
+          Reason (usually the value set concept name) that excludes patient
           from the measure.
       - name: exclusion_type
         description: measure specific exclusion for procedure medication.
@@ -1055,7 +1058,7 @@ models:
   - name: quality_measures__int_nqf0053_long
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_nqf0053_long
       tags: quality_measures
       materialized: table
@@ -1104,11 +1107,11 @@ models:
       - name: tuva_last_run
         description: The date and timestamp of the dbt run.
 
-### Diabetes: Eye Exam
+  ### Diabetes: Eye Exam
   - name: quality_measures__int_cbe0055__performance_period
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_cbe0055__performance_period
       tags: quality_measures
       materialized: view
@@ -1118,7 +1121,7 @@ models:
   - name: quality_measures__int_cbe0055_denominator
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_cbe0055_denominator
       tags: quality_measures
       materialized: table
@@ -1149,7 +1152,7 @@ models:
   - name: quality_measures__int_cbe0055_numerator
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_cbe0055_numerator
       tags: quality_measures
       materialized: table
@@ -1185,7 +1188,7 @@ models:
   - name: quality_measures__int_cbe0055_exclusions
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_cbe0055_exclusions
       tags: quality_measures
       materialized: table
@@ -1212,7 +1215,7 @@ models:
   - name: quality_measures__int_cbe0055_long
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_cbe0055_long
       tags: quality_measures
       materialized: table
@@ -1261,11 +1264,11 @@ models:
       - name: tuva_last_run
         description: The date and timestamp of the dbt run.
 
-### Medication Reconciliation Post-Discharge
+  ### Medication Reconciliation Post-Discharge
   - name: quality_measures__int_nqf0097_denominator
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_nqf0097_denominator
       tags: quality_measures
       materialized: table
@@ -1298,7 +1301,7 @@ models:
   - name: quality_measures__int_nqf0097_exclusions
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_nqf0097_exclusions
       tags: quality_measures
       materialized: table
@@ -1325,7 +1328,7 @@ models:
   - name: quality_measures__int_nqf0097_long
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_nqf0097_long
       tags: quality_measures
       materialized: table
@@ -1377,7 +1380,7 @@ models:
   - name: quality_measures__int_nqf0097_numerator
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_nqf0097_numerator
       tags: quality_measures
       materialized: table
@@ -1413,18 +1416,18 @@ models:
   - name: quality_measures__int_nqf0097__performance_period
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_nqf0097__performance_period
       tags: quality_measures
       materialized: view
     description: >
       Performance Period definition for Medication Reconciliation Post-Discharge
 
-### Statin Therapy for the Prevention and Treatment of Cardiovascular Disease
+  ### Statin Therapy for the Prevention and Treatment of Cardiovascular Disease
   - name: quality_measures__int_cqm438__performance_period
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_cqm438__performance_period
       tags: quality_measures
       materialized: view
@@ -1434,7 +1437,7 @@ models:
   - name: quality_measures__int_cqm438_denominator_criteria1
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_cqm438_denominator_criteria1
       tags: quality_measures
       materialized: table
@@ -1459,7 +1462,7 @@ models:
   - name: quality_measures__int_cqm438_denominator_criteria2
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_cqm438_denominator_criteria2
       tags: quality_measures
       materialized: table
@@ -1484,7 +1487,7 @@ models:
   - name: quality_measures__int_cqm438_denominator_criteria3
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_cqm438_denominator_criteria3
       tags: quality_measures
       materialized: table
@@ -1509,7 +1512,7 @@ models:
   - name: quality_measures__int_cqm438_denominator
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_cqm438_denominator
       tags: quality_measures
       materialized: table
@@ -1540,7 +1543,7 @@ models:
   - name: quality_measures__int_cqm438_exclusions
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_cqm438_exclusions
       tags: quality_measures
       materialized: table
@@ -1567,7 +1570,7 @@ models:
   - name: quality_measures__int_cqm438_long
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_cqm438_long
       tags: quality_measures
       materialized: table
@@ -1619,7 +1622,7 @@ models:
   - name: quality_measures__int_cqm438_numerator
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_cqm438_numerator
       tags: quality_measures
       materialized: table
@@ -1652,11 +1655,11 @@ models:
       - name: tuva_last_run
         description: The date and timestamp of the dbt run.
 
-### Influenza Immunization
+  ### Influenza Immunization
   - name: quality_measures__int_nqf0041__performance_period
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_nqf0041__performance_period
       tags: quality_measures
       materialized: view
@@ -1666,7 +1669,7 @@ models:
   - name: quality_measures__int_nqf0041_denominator
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_nqf0041_denominator
       tags: quality_measures
       materialized: table
@@ -1697,7 +1700,7 @@ models:
   - name: quality_measures__int_nqf0041_exclusions
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_nqf0041_exclusions
       tags: quality_measures
       materialized: table
@@ -1724,7 +1727,7 @@ models:
   - name: quality_measures__int_nqf0041_long
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_nqf0041_long
       tags: quality_measures
       materialized: table
@@ -1776,7 +1779,7 @@ models:
   - name: quality_measures__int_nqf0041_numerator
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_nqf0041_numerator
       tags: quality_measures
       materialized: table
@@ -1809,11 +1812,11 @@ models:
       - name: tuva_last_run
         description: The date and timestamp of the dbt run.
 
-### Falls: Plan of Care
+  ### Falls: Plan of Care
   - name: quality_measures__int_cbe0101__performance_period
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_cbe0101__performance_period
       tags: quality_measures
       materialized: view
@@ -1823,7 +1826,7 @@ models:
   - name: quality_measures__int_cbe0101_denominator
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_cbe0101_denominator
       tags: quality_measures
       materialized: table
@@ -1856,7 +1859,7 @@ models:
   - name: quality_measures__int_cbe0101_exclusions
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_cbe0101_exclusions
       tags: quality_measures
       materialized: table
@@ -1883,7 +1886,7 @@ models:
   - name: quality_measures__int_cbe0101_long
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_cbe0101_long
       tags: quality_measures
       materialized: table
@@ -1935,7 +1938,7 @@ models:
   - name: quality_measures__int_cbe0101_numerator
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_cbe0101_numerator
       tags: quality_measures
       materialized: table
@@ -1968,11 +1971,11 @@ models:
       - name: tuva_last_run
         description: The date and timestamp of the dbt run.
 
-### Urinary Incontinence: Assessment of Presence or Absence of Urinary Incontinence in Women Aged 65 Years and Older
+  ### Urinary Incontinence: Assessment of Presence or Absence of Urinary Incontinence in Women Aged 65 Years and Older
   - name: quality_measures__int_cqm48__performance_period
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_cqm48__performance_period
       tags: quality_measures
       materialized: view
@@ -1982,7 +1985,7 @@ models:
   - name: quality_measures__int_cqm48_denominator
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_cqm48_denominator
       tags: quality_measures
       materialized: table
@@ -2015,7 +2018,7 @@ models:
   - name: quality_measures__int_cqm48_exclusions
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_cqm48_exclusions
       tags: quality_measures
       materialized: table
@@ -2042,7 +2045,7 @@ models:
   - name: quality_measures__int_cqm48_long
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_cqm48_long
       tags: quality_measures
       materialized: table
@@ -2094,7 +2097,7 @@ models:
   - name: quality_measures__int_cqm48_numerator
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_cqm48_numerator
       tags: quality_measures
       materialized: table
@@ -2127,11 +2130,11 @@ models:
       - name: tuva_last_run
         description: The date and timestamp of the dbt run.
 
-### Documentation of Current Medications in the Medical Record        
+  ### Documentation of Current Medications in the Medical Record
   - name: quality_measures__int_cqm130__performance_period
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_cqm130__performance_period
       tags: quality_measures
       materialized: view
@@ -2141,7 +2144,7 @@ models:
   - name: quality_measures__int_cqm130_denominator
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_cqm130_denominator
       tags: quality_measures
       materialized: table
@@ -2176,7 +2179,7 @@ models:
   - name: quality_measures__int_cqm130_exclusions
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_cqm130_exclusions
       tags: quality_measures
       materialized: table
@@ -2203,7 +2206,7 @@ models:
   - name: quality_measures__int_cqm130_long
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_cqm130_long
       tags: quality_measures
       materialized: table
@@ -2255,7 +2258,7 @@ models:
   - name: quality_measures__int_cqm130_numerator
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_cqm130_numerator
       tags: quality_measures
       materialized: table
@@ -2287,12 +2290,12 @@ models:
           particular outcome has been achieved.
       - name: tuva_last_run
         description: The date and timestamp of the dbt run.
-     
-### Pain Assessment and Follow-Up
+
+  ### Pain Assessment and Follow-Up
   - name: quality_measures__int_nqf0420__performance_period
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_nqf0420__performance_period
       tags: quality_measures
       materialized: view
@@ -2302,7 +2305,7 @@ models:
   - name: quality_measures__int_nqf0420_denominator
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_nqf0420_denominator
       tags: quality_measures
       materialized: table
@@ -2333,7 +2336,7 @@ models:
   - name: quality_measures__int_nqf0420_exclusions
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_nqf0420_exclusions
       tags: quality_measures
       materialized: table
@@ -2360,7 +2363,7 @@ models:
   - name: quality_measures__int_nqf0420_long
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_nqf0420_long
       tags: quality_measures
       materialized: table
@@ -2412,7 +2415,7 @@ models:
   - name: quality_measures__int_nqf0420_numerator
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _int_nqf0420_numerator
       tags: quality_measures
       materialized: table
@@ -2445,11 +2448,11 @@ models:
       - name: tuva_last_run
         description: The date and timestamp of the dbt run.
 
-## Staging
+  ## Staging
   - name: quality_measures__stg_core__condition
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _stg_condition
       tags: quality_measures
       materialized: ephemeral
@@ -2469,7 +2472,7 @@ models:
   - name: quality_measures__stg_core__encounter
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _stg_encounter
       tags: quality_measures
       materialized: ephemeral
@@ -2488,7 +2491,7 @@ models:
   - name: quality_measures__stg_core__medication
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _stg_medication
       tags: quality_measures
       materialized: ephemeral
@@ -2509,7 +2512,7 @@ models:
   - name: quality_measures__stg_core__observation
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _stg_observation
       tags: quality_measures
       materialized: ephemeral
@@ -2530,7 +2533,7 @@ models:
   - name: quality_measures__stg_core__patient
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _stg_patient
       tags: quality_measures
       materialized: ephemeral
@@ -2545,7 +2548,7 @@ models:
           - not_null:
               severity: warn
           - accepted_values:
-              values: ['female', 'male','unknown']
+              values: ["female", "male", "unknown"]
               severity: warn
       - name: birth_date
         tests:
@@ -2557,7 +2560,7 @@ models:
   - name: quality_measures__stg_core__procedure
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _stg_procedure
       tags: quality_measures
       materialized: ephemeral
@@ -2582,7 +2585,7 @@ models:
   - name: quality_measures__stg_medical_claim
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _stg_medical_claim
       tags: quality_measures
       materialized: ephemeral
@@ -2605,7 +2608,7 @@ models:
   - name: quality_measures__stg_pharmacy_claim
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _stg_pharmacy_claim
       tags: quality_measures
       materialized: ephemeral
@@ -2619,11 +2622,10 @@ models:
       - name: paid_date
       - name: tuva_last_run
 
-
   - name: quality_measures__stg_core__lab_result
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{% else %}quality_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_quality_measures{%- else -%}quality_measures{%- endif -%}
       alias: _stg_lab_result
       tags: quality_measures
       materialized: ephemeral

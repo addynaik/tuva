@@ -76,7 +76,7 @@ left join {{ ref('terminology__snomed_ct')}} snomed_ct
         and all_procedures.source_code = snomed_ct.snomed_ct
 
 
-{% else %}
+{%- else -%}
 
 
 select

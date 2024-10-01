@@ -197,7 +197,7 @@ with members as (
             , cast(medicaid_dual_status_default as bit) as medicaid_dual_status_default
             , cast(orec_default as bit) as orec_default
             , cast(institutional_status_default as bit) as institutional_status_default
-        {% else %}
+        {%- else -%}
             , cast(enrollment_status_default as boolean) as enrollment_status_default
             , cast(medicaid_dual_status_default as boolean) as medicaid_dual_status_default
             , cast(orec_default as boolean) as orec_default

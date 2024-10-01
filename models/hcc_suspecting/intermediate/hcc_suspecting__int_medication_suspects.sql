@@ -132,7 +132,7 @@ with all_medications as (
         , cast(drug_code as {{ dbt.type_string() }}) as drug_code
         {% if target.type == 'fabric' %}
             , cast(current_year_billed as bit) as current_year_billed
-        {% else %}
+        {%- else -%}
             , cast(current_year_billed as boolean) as current_year_billed
         {% endif %}
         , cast(reason as {{ dbt.type_string() }}) as reason

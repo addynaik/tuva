@@ -18,7 +18,7 @@ SELECT DISTINCT -- to bring to claim_ID grain
         when m.zip_code is not null and len(m.zip_code) NOT IN (5,9,10) then 'Invalid Zip Code Length'
         else null
      end as invalid_reason
-    {% else %}
+    {%- else -%}
     ,case when m.zip_code is  null then 'null'
           when length(m.zip_code) in  (5,9,10) then 'valid'
                              else 'invalid' end as bucket_name

@@ -196,7 +196,7 @@ with egfr_labs as (
         , cast(hcc_description as {{ dbt.type_string() }}) as hcc_description
         {% if target.type == 'fabric' %}
             , cast(current_year_billed as bit) as current_year_billed
-        {% else %}
+        {%- else -%}
             , cast(current_year_billed as boolean) as current_year_billed
         {% endif %}
         , cast(reason as {{ dbt.type_string() }}) as reason

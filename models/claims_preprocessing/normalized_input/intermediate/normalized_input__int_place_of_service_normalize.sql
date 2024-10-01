@@ -16,7 +16,7 @@ from {{ ref('normalized_input__stg_medical_claim') }} med
 left join {{ ref('terminology__place_of_service') }} pos
     {% if target.type == 'fabric' %}
         on RIGHT(REPLICATE('0', 2) + med.place_of_service_code, 2) = pos.place_of_service_code
-    {% else %}
+    {%- else -%}
         on lpad(med.place_of_service_code, 2, '0') = pos.place_of_service_code
     {% endif %}
 where claim_type = 'professional'

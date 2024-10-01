@@ -1,15 +1,14 @@
 version: 2
 
 models:
-
-#### Claims Enrollment
-## Final
+  #### Claims Enrollment
+  ## Final
   - name: claims_enrollment__flag_claims_with_enrollment
     description: This table contains claims with matching enrollment
     config:
       schema: |
         {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_claims_preprocessing
-        {% else %}claims_preprocessing{%- endif -%}
+        {%- else -%}claims_preprocessing{%- endif -%}
       alias: flag_claims_with_enrollment
       tags:
         - claims_preprocessing
@@ -39,21 +38,19 @@ models:
       - name: inferred_claim_end_column_used
         description: The name of the column used to populated inferred_claim_start_column_used.
 
-
-      
-###   Normalized Claim Input Layer
-##    Final
+  ###   Normalized Claim Input Layer
+  ##    Final
   - name: normalized_input__eligibility
     description: |
-        The eligibility table contains information on patient health plan and 
-        supplemental insurance eligibility.
+      The eligibility table contains information on patient health plan and 
+      supplemental insurance eligibility.
     config:
       schema: |
         {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_claims_preprocessing
-        {% else %}claims_preprocessing{%- endif -%}
+        {%- else -%}claims_preprocessing{%- endif -%}
       alias: normalized_input_eligibility
       materialized: table
-      tags: 
+      tags:
         - normalized_input
         - claims_preprocessing
     columns:
@@ -134,7 +131,6 @@ models:
           `dbt_utils.pretty_time` as the local time of the `dbt run` 
           environment.  Timezone is configurable via the `tuva_last_run` var.
 
-
   - name: normalized_input__medical_claim
     description: |
       The medical claim table contains information on services rendered to 
@@ -142,10 +138,10 @@ models:
     config:
       schema: |
         {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_claims_preprocessing
-        {% else %}claims_preprocessing{%- endif -%}
+        {%- else -%}claims_preprocessing{%- endif -%}
       alias: normalized_input_medical_claim
       materialized: table
-      tags: 
+      tags:
         - normalized_input
         - claims_preprocessing
     tests:
@@ -726,19 +722,19 @@ models:
         description: Date of the 24th procedure on the claim.
       - name: procedure_date_25
         description: Date of the 25th procedure on the claim.
-#      - name: encounter_type
-#        description: The type of encounter this claim belongs to.
-#      - name: encounter_id
-#        description: >
-#          The encounter_id for the encounter that this claims belongs to.
-#      - name: service_category_1
-#        description: The broader service category this claim belongs to.
-#        meta:
-#          terminology: https://github.com/tuva-health/the_tuva_project/blob/main/seeds/value_sets/service_categories/service_category__service_categories.csv
-#      - name: service_category_2
-#        meta:
-#          terminology: https://github.com/tuva-health/the_tuva_project/blob/main/seeds/value_sets/service_categories/service_category__service_categories.csv
-#        description: The more specific service category this claim belongs to.
+      #      - name: encounter_type
+      #        description: The type of encounter this claim belongs to.
+      #      - name: encounter_id
+      #        description: >
+      #          The encounter_id for the encounter that this claims belongs to.
+      #      - name: service_category_1
+      #        description: The broader service category this claim belongs to.
+      #        meta:
+      #          terminology: https://github.com/tuva-health/the_tuva_project/blob/main/seeds/value_sets/service_categories/service_category__service_categories.csv
+      #      - name: service_category_2
+      #        meta:
+      #          terminology: https://github.com/tuva-health/the_tuva_project/blob/main/seeds/value_sets/service_categories/service_category__service_categories.csv
+      #        description: The more specific service category this claim belongs to.
       - name: data_source
         description: >
           User-configured field that indicates the data source (e.g. typically 
@@ -749,7 +745,6 @@ models:
           `dbt_utils.pretty_time` as the local time of the `dbt run` 
           environment.  Timezone is configurable via the `tuva_last_run` var.
 
-
   - name: normalized_input__pharmacy_claim
     description: |
       The pharmacy claim table contains information on prescription drugs that 
@@ -757,10 +752,10 @@ models:
     config:
       schema: |
         {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_claims_preprocessing
-        {% else %}claims_preprocessing{%- endif -%}
+        {%- else -%}claims_preprocessing{%- endif -%}
       alias: normalized_input_pharmacy_claim
       materialized: table
-      tags: 
+      tags:
         - normalized_input
         - claims_preprocessing
     columns:
@@ -831,19 +826,16 @@ models:
           `dbt_utils.pretty_time` as the local time of the `dbt run` 
           environment.  Timezone is configurable via the `tuva_last_run` var.
 
-
-
-
-##    Intermediate
+  ##    Intermediate
 
   - name: normalized_input__int_admit_source_final
     config:
       schema: |
         {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_claims_preprocessing
-        {% else %}claims_preprocessing{%- endif -%}
+        {%- else -%}claims_preprocessing{%- endif -%}
       alias: _int_normalized_input_admit_source_final
       materialized: table
-      tags: 
+      tags:
         - normalized_input
         - claims_preprocessing
 
@@ -851,10 +843,10 @@ models:
     config:
       schema: |
         {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_claims_preprocessing
-        {% else %}claims_preprocessing{%- endif -%}
+        {%- else -%}claims_preprocessing{%- endif -%}
       alias: _int_normalized_input_admit_source_voting
       materialized: table
-      tags: 
+      tags:
         - normalized_input
         - claims_preprocessing
 
@@ -862,10 +854,10 @@ models:
     config:
       schema: |
         {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_claims_preprocessing
-        {% else %}claims_preprocessing{%- endif -%}
+        {%- else -%}claims_preprocessing{%- endif -%}
       alias: _int_normalized_input_admit_type_final
       materialized: table
-      tags: 
+      tags:
         - normalized_input
         - claims_preprocessing
 
@@ -873,10 +865,10 @@ models:
     config:
       schema: |
         {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_claims_preprocessing
-        {% else %}claims_preprocessing{%- endif -%}
+        {%- else -%}claims_preprocessing{%- endif -%}
       alias: _int_normalized_input_admit_type_normalize_voting
       materialized: table
-      tags: 
+      tags:
         - normalized_input
         - claims_preprocessing
 
@@ -884,10 +876,10 @@ models:
     config:
       schema: |
         {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_claims_preprocessing
-        {% else %}claims_preprocessing{%- endif -%}
+        {%- else -%}claims_preprocessing{%- endif -%}
       alias: _int_normalized_input_apr_drg_final
       materialized: table
-      tags: 
+      tags:
         - normalized_input
         - claims_preprocessing
 
@@ -895,10 +887,10 @@ models:
     config:
       schema: |
         {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_claims_preprocessing
-        {% else %}claims_preprocessing{%- endif -%}
+        {%- else -%}claims_preprocessing{%- endif -%}
       alias: _int_normalized_input_apr_drg_voting
       materialized: table
-      tags: 
+      tags:
         - normalized_input
         - claims_preprocessing
 
@@ -906,46 +898,43 @@ models:
     config:
       schema: |
         {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_claims_preprocessing
-        {% else %}claims_preprocessing{%- endif -%}
+        {%- else -%}claims_preprocessing{%- endif -%}
       alias: _int_normalized_input_bill_type_final
       materialized: table
-      tags: 
+      tags:
         - normalized_input
         - claims_preprocessing
-
 
   - name: normalized_input__int_bill_type_voting
     config:
       schema: |
         {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_claims_preprocessing
-        {% else %}claims_preprocessing{%- endif -%}
+        {%- else -%}claims_preprocessing{%- endif -%}
       alias: _int_normalized_input_bill_type_voting
       materialized: table
-      tags: 
+      tags:
         - normalized_input
         - claims_preprocessing
-
 
   - name: normalized_input__int_diagnosis_code_final
     config:
       schema: |
         {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_claims_preprocessing
-        {% else %}claims_preprocessing{%- endif -%}
+        {%- else -%}claims_preprocessing{%- endif -%}
       alias: _int_normalized_input_diagnosis_code_final
       materialized: table
-      tags: 
+      tags:
         - normalized_input
         - claims_preprocessing
-
 
   - name: normalized_input__int_diagnosis_code_normalize
     config:
       schema: |
         {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_claims_preprocessing
-        {% else %}claims_preprocessing{%- endif -%}
+        {%- else -%}claims_preprocessing{%- endif -%}
       alias: _int_normalized_input_diagnosis_code_normalize
       materialized: table
-      tags: 
+      tags:
         - normalized_input
         - claims_preprocessing
 
@@ -953,10 +942,10 @@ models:
     config:
       schema: |
         {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_claims_preprocessing
-        {% else %}claims_preprocessing{%- endif -%}
+        {%- else -%}claims_preprocessing{%- endif -%}
       alias: _int_normalized_input_diagnosis_code_voting
       materialized: table
-      tags: 
+      tags:
         - normalized_input
         - claims_preprocessing
 
@@ -964,10 +953,10 @@ models:
     config:
       schema: |
         {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_claims_preprocessing
-        {% else %}claims_preprocessing{%- endif -%}
+        {%- else -%}claims_preprocessing{%- endif -%}
       alias: _int_normalized_input_discharge_disposition_final
       materialized: table
-      tags: 
+      tags:
         - normalized_input
         - claims_preprocessing
 
@@ -975,10 +964,10 @@ models:
     config:
       schema: |
         {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_claims_preprocessing
-        {% else %}claims_preprocessing{%- endif -%}
+        {%- else -%}claims_preprocessing{%- endif -%}
       alias: _int_normalized_input_discharge_disposition_voting
       materialized: table
-      tags: 
+      tags:
         - normalized_input
         - claims_preprocessing
 
@@ -986,10 +975,10 @@ models:
     config:
       schema: |
         {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_claims_preprocessing
-        {% else %}claims_preprocessing{%- endif -%}
+        {%- else -%}claims_preprocessing{%- endif -%}
       alias: _int_normalized_input_eligibility_dates_normalize
       materialized: table
-      tags: 
+      tags:
         - normalized_input
         - claims_preprocessing
 
@@ -997,7 +986,7 @@ models:
     config:
       schema: |
         {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_claims_preprocessing
-        {% else %}claims_preprocessing{%- endif -%}
+        {%- else -%}claims_preprocessing{%- endif -%}
       alias: _int_normalized_input_medical_claim_date_normalize
       materialized: table
       tags:
@@ -1008,35 +997,32 @@ models:
     config:
       schema: |
         {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_claims_preprocessing
-        {% else %}claims_preprocessing{%- endif -%}
+        {%- else -%}claims_preprocessing{%- endif -%}
       alias: _int_normalized_input_medical_date_aggregation
       materialized: table
-      tags: 
+      tags:
         - normalized_input
         - claims_preprocessing
-
 
   - name: normalized_input__int_medical_npi_normalize
     config:
       schema: |
         {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_claims_preprocessing
-        {% else %}claims_preprocessing{%- endif -%}
+        {%- else -%}claims_preprocessing{%- endif -%}
       alias: _int_normalized_input_medical_npi_normalize
       materialized: table
-      tags: 
+      tags:
         - normalized_input
         - claims_preprocessing
-
-
 
   - name: normalized_input__int_ms_drg_final
     config:
       schema: |
         {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_claims_preprocessing
-        {% else %}claims_preprocessing{%- endif -%}
+        {%- else -%}claims_preprocessing{%- endif -%}
       alias: _int_normalized_input_ms_drg_final
       materialized: table
-      tags: 
+      tags:
         - normalized_input
         - claims_preprocessing
 
@@ -1044,10 +1030,10 @@ models:
     config:
       schema: |
         {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_claims_preprocessing
-        {% else %}claims_preprocessing{%- endif -%}
+        {%- else -%}claims_preprocessing{%- endif -%}
       alias: _int_normalized_input_ms_drg_voting
       materialized: table
-      tags: 
+      tags:
         - normalized_input
         - claims_preprocessing
 
@@ -1055,10 +1041,10 @@ models:
     config:
       schema: |
         {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_claims_preprocessing
-        {% else %}claims_preprocessing{%- endif -%}
+        {%- else -%}claims_preprocessing{%- endif -%}
       alias: _int_normalized_input_place_of_service_normalize
       materialized: table
-      tags: 
+      tags:
         - normalized_input
         - claims_preprocessing
 
@@ -1066,10 +1052,10 @@ models:
     config:
       schema: |
         {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_claims_preprocessing
-        {% else %}claims_preprocessing{%- endif -%}
+        {%- else -%}claims_preprocessing{%- endif -%}
       alias: _int_normalized_input_present_on_admit_final
       materialized: table
-      tags: 
+      tags:
         - normalized_input
         - claims_preprocessing
 
@@ -1077,10 +1063,10 @@ models:
     config:
       schema: |
         {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_claims_preprocessing
-        {% else %}claims_preprocessing{%- endif -%}
+        {%- else -%}claims_preprocessing{%- endif -%}
       alias: _int_normalized_input_present_on_admit_normalize
       materialized: table
-      tags: 
+      tags:
         - normalized_input
         - claims_preprocessing
 
@@ -1088,10 +1074,10 @@ models:
     config:
       schema: |
         {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_claims_preprocessing
-        {% else %}claims_preprocessing{%- endif -%}
+        {%- else -%}claims_preprocessing{%- endif -%}
       alias: _int_normalized_input_present_on_admit_voting
       materialized: table
-      tags: 
+      tags:
         - normalized_input
         - claims_preprocessing
 
@@ -1099,10 +1085,10 @@ models:
     config:
       schema: |
         {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_claims_preprocessing
-        {% else %}claims_preprocessing{%- endif -%}
+        {%- else -%}claims_preprocessing{%- endif -%}
       alias: _int_normalized_input_procedure_code_final
       materialized: table
-      tags: 
+      tags:
         - normalized_input
         - claims_preprocessing
 
@@ -1110,22 +1096,21 @@ models:
     config:
       schema: |
         {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_claims_preprocessing
-        {% else %}claims_preprocessing{%- endif -%}
+        {%- else -%}claims_preprocessing{%- endif -%}
       alias: _int_normalized_input_procedure_code_normalize
       materialized: table
-      tags: 
+      tags:
         - normalized_input
         - claims_preprocessing
-
 
   - name: normalized_input__int_procedure_code_voting
     config:
       schema: |
         {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_claims_preprocessing
-        {% else %}claims_preprocessing{%- endif -%}
+        {%- else -%}claims_preprocessing{%- endif -%}
       alias: _int_normalized_input_procedure_code_voting
       materialized: table
-      tags: 
+      tags:
         - normalized_input
         - claims_preprocessing
 
@@ -1133,22 +1118,21 @@ models:
     config:
       schema: |
         {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_claims_preprocessing
-        {% else %}claims_preprocessing{%- endif -%}
+        {%- else -%}claims_preprocessing{%- endif -%}
       alias: _int_normalized_input_procedure_date_final
       materialized: table
-      tags: 
+      tags:
         - normalized_input
         - claims_preprocessing
-
 
   - name: normalized_input__int_procedure_date_normalize
     config:
       schema: |
         {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_claims_preprocessing
-        {% else %}claims_preprocessing{%- endif -%}
+        {%- else -%}claims_preprocessing{%- endif -%}
       alias: _int_normalized_input_procedure_date_normalize
       materialized: table
-      tags: 
+      tags:
         - normalized_input
         - claims_preprocessing
 
@@ -1156,10 +1140,10 @@ models:
     config:
       schema: |
         {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_claims_preprocessing
-        {% else %}claims_preprocessing{%- endif -%}
+        {%- else -%}claims_preprocessing{%- endif -%}
       alias: _int_normalized_input_procedure_date_voting
       materialized: table
-      tags: 
+      tags:
         - normalized_input
         - claims_preprocessing
 
@@ -1167,10 +1151,10 @@ models:
     config:
       schema: |
         {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_claims_preprocessing
-        {% else %}claims_preprocessing{%- endif -%}
+        {%- else -%}claims_preprocessing{%- endif -%}
       alias: _int_normalized_input_revenue_center_normalize
       materialized: table
-      tags: 
+      tags:
         - normalized_input
         - claims_preprocessing
 
@@ -1178,31 +1162,31 @@ models:
     config:
       schema: |
         {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_claims_preprocessing
-        {% else %}claims_preprocessing{%- endif -%}
+        {%- else -%}claims_preprocessing{%- endif -%}
       alias: _int_normalized_input_undetermined_claim_type
       materialized: table
-      tags: 
+      tags:
         - normalized_input
         - claims_preprocessing
 
-##    Staging
+  ##    Staging
   - name: normalized_input__stg_eligibility
     config:
       materialized: ephemeral
-      tags: 
+      tags:
         - normalized_input
         - claims_preprocessing
 
   - name: normalized_input__stg_medical_claim
     config:
       materialized: ephemeral
-      tags: 
+      tags:
         - normalized_input
         - claims_preprocessing
 
   - name: normalized_input__stg_pharmacy_claim
     config:
       materialized: ephemeral
-      tags: 
+      tags:
         - normalized_input
         - claims_preprocessing

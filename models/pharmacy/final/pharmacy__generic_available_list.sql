@@ -55,6 +55,6 @@ where
     ga.product_startmarketingdate is not null
     {% if target.type == 'fabric' %}
         and cast(ga.product_startmarketingdate as date) <= GETDATE()
-    {% else %}
+    {%- else -%}
         and cast(ga.product_startmarketingdate as date) <= current_date
 {% endif %}

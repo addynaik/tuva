@@ -10,7 +10,7 @@ from {{ ref('normalized_input__medical_claim') }}
 
 {% if target.type == 'fabric' %}
 union
-{% else %}
+{%- else -%}
 union distinct
 {% endif %}
 

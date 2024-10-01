@@ -1,14 +1,13 @@
 version: 2
 
 models:
-
-## Final 
+  ## Final
   - name: ahrq_measures__pqi_denom_long
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{% else %}ahrq_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{%- else -%}ahrq_measures{%- endif -%}
       alias: pqi_denom_long
-      tags: 
+      tags:
         - ahrq_measures
         - pqi
       materialized: table
@@ -34,9 +33,9 @@ models:
   - name: ahrq_measures__pqi_exclusion_long
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{% else %}ahrq_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{%- else -%}ahrq_measures{%- endif -%}
       alias: pqi_exclusion_long
-      tags: 
+      tags:
         - ahrq_measures
         - pqi
       materialized: table
@@ -52,7 +51,7 @@ models:
       - name: exclusion_reason
         description: description of the reason the encounter was excluded
       - name: exclusion_number
-        description: for a given encounter and pqi measure, the number of exclusion it qualifies for. 
+        description: for a given encounter and pqi measure, the number of exclusion it qualifies for.
       - name: pqi_number
         description: the number of the pqi measure
       - name: tuva_last_run
@@ -64,9 +63,9 @@ models:
   - name: ahrq_measures__pqi_num_long
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{% else %}ahrq_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{%- else -%}ahrq_measures{%- endif -%}
       alias: pqi_num_long
-      tags: 
+      tags:
         - ahrq_measures
         - pqi
       materialized: table
@@ -84,7 +83,7 @@ models:
       - name: encounter_id
         description: Unique identifier for each encounter.
       - name: exclusion_number
-        description: for a given encounter and pqi measure, the number of exclusion it qualifies for. 
+        description: for a given encounter and pqi measure, the number of exclusion it qualifies for.
       - name: pqi_number
         description: the number of the pqi measure
       - name: tuva_last_run
@@ -96,9 +95,9 @@ models:
   - name: ahrq_measures__pqi_rate
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{% else %}ahrq_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{%- else -%}ahrq_measures{%- endif -%}
       alias: pqi_rate
-      tags: 
+      tags:
         - ahrq_measures
         - pqi
       materialized: table
@@ -128,9 +127,9 @@ models:
   - name: ahrq_measures__pqi_summary
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{% else %}ahrq_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{%- else -%}ahrq_measures{%- endif -%}
       alias: pqi_summary
-      tags: 
+      tags:
         - ahrq_measures
         - pqi
       materialized: table
@@ -156,7 +155,7 @@ models:
       - name: facility_id
         description: >
           Facility ID for the encounter (typically represents the facility 
-          where services were performed).      
+          where services were performed).
       - name: ms_drg_code
         description: MS-DRG code for the encounter.
       - name: ms_drg_description
@@ -177,14 +176,14 @@ models:
           `dbt_utils.pretty_time` as the local time of the `dbt run` 
           environment.  Timezone is configurable via the `tuva_last_run` var.
 
-## Intermediate
+  ## Intermediate
 
   - name: ahrq_measures__int_pqi_01_denom
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{% else %}ahrq_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{%- else -%}ahrq_measures{%- endif -%}
       alias: _int_pqi_01_denom
-      tags: 
+      tags:
         - ahrq_measures
         - pqi
       materialized: view
@@ -194,9 +193,9 @@ models:
   - name: ahrq_measures__int_pqi_01_exclusions
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{% else %}ahrq_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{%- else -%}ahrq_measures{%- endif -%}
       alias: _int_pqi_01_exclusions
-      tags: 
+      tags:
         - ahrq_measures
         - pqi
       materialized: view
@@ -206,9 +205,9 @@ models:
   - name: ahrq_measures__int_pqi_01_num
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{% else %}ahrq_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{%- else -%}ahrq_measures{%- endif -%}
       alias: _int_pqi_01_num
-      tags: 
+      tags:
         - ahrq_measures
         - pqi
       materialized: view
@@ -218,9 +217,9 @@ models:
   - name: ahrq_measures__int_pqi_03_denom
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{% else %}ahrq_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{%- else -%}ahrq_measures{%- endif -%}
       alias: _int_pqi_03_denom
-      tags: 
+      tags:
         - ahrq_measures
         - pqi
       materialized: view
@@ -230,9 +229,9 @@ models:
   - name: ahrq_measures__int_pqi_03_exclusions
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{% else %}ahrq_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{%- else -%}ahrq_measures{%- endif -%}
       alias: _int_pqi_03_exclusions
-      tags: 
+      tags:
         - ahrq_measures
         - pqi
       materialized: view
@@ -242,9 +241,9 @@ models:
   - name: ahrq_measures__int_pqi_03_num
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{% else %}ahrq_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{%- else -%}ahrq_measures{%- endif -%}
       alias: _int_pqi_03_num
-      tags: 
+      tags:
         - ahrq_measures
         - pqi
       materialized: view
@@ -254,21 +253,21 @@ models:
   - name: ahrq_measures__int_pqi_05_denom
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{% else %}ahrq_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{%- else -%}ahrq_measures{%- endif -%}
       alias: _int_pqi_05_denom
-      tags: 
+      tags:
         - ahrq_measures
         - pqi
       materialized: view
     description: >
       Denominator for PQI 05 measure calculation.
-    
+
   - name: ahrq_measures__int_pqi_05_exclusions
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{% else %}ahrq_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{%- else -%}ahrq_measures{%- endif -%}
       alias: _int_pqi_05_exclusions
-      tags: 
+      tags:
         - ahrq_measures
         - pqi
       materialized: view
@@ -278,21 +277,21 @@ models:
   - name: ahrq_measures__int_pqi_05_num
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{% else %}ahrq_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{%- else -%}ahrq_measures{%- endif -%}
       alias: _int_pqi_05_num
-      tags: 
+      tags:
         - ahrq_measures
         - pqi
       materialized: view
     description: >
       Numerator for PQI 05 measure calculation.
-    
+
   - name: ahrq_measures__int_pqi_07_denom
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{% else %}ahrq_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{%- else -%}ahrq_measures{%- endif -%}
       alias: _int_pqi_07_denom
-      tags: 
+      tags:
         - ahrq_measures
         - pqi
       materialized: view
@@ -302,9 +301,9 @@ models:
   - name: ahrq_measures__int_pqi_07_exclusions
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{% else %}ahrq_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{%- else -%}ahrq_measures{%- endif -%}
       alias: _int_pqi_07_exclusions
-      tags: 
+      tags:
         - ahrq_measures
         - pqi
       materialized: view
@@ -314,21 +313,21 @@ models:
   - name: ahrq_measures__int_pqi_07_num
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{% else %}ahrq_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{%- else -%}ahrq_measures{%- endif -%}
       alias: _int_pqi_07_num
-      tags: 
+      tags:
         - ahrq_measures
         - pqi
       materialized: view
     description: >
       Numerator for PQI 07 measure calculation.
-    
+
   - name: ahrq_measures__int_pqi_08_denom
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{% else %}ahrq_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{%- else -%}ahrq_measures{%- endif -%}
       alias: _int_pqi_08_denom
-      tags: 
+      tags:
         - ahrq_measures
         - pqi
       materialized: view
@@ -338,9 +337,9 @@ models:
   - name: ahrq_measures__int_pqi_08_exclusions
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{% else %}ahrq_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{%- else -%}ahrq_measures{%- endif -%}
       alias: _int_pqi_08_exclusions
-      tags: 
+      tags:
         - ahrq_measures
         - pqi
       materialized: view
@@ -350,9 +349,9 @@ models:
   - name: ahrq_measures__int_pqi_08_num
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{% else %}ahrq_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{%- else -%}ahrq_measures{%- endif -%}
       alias: _int_pqi_08_num
-      tags: 
+      tags:
         - ahrq_measures
         - pqi
       materialized: view
@@ -362,21 +361,21 @@ models:
   - name: ahrq_measures__int_pqi_11_denom
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{% else %}ahrq_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{%- else -%}ahrq_measures{%- endif -%}
       alias: _int_pqi_11_denom
-      tags: 
+      tags:
         - ahrq_measures
         - pqi
       materialized: view
     description: >
       Denominator for PQI 11 measure calculation.
-    
+
   - name: ahrq_measures__int_pqi_11_exclusions
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{% else %}ahrq_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{%- else -%}ahrq_measures{%- endif -%}
       alias: _int_pqi_11_exclusions
-      tags: 
+      tags:
         - ahrq_measures
         - pqi
       materialized: view
@@ -386,9 +385,9 @@ models:
   - name: ahrq_measures__int_pqi_11_num
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{% else %}ahrq_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{%- else -%}ahrq_measures{%- endif -%}
       alias: _int_pqi_11_num
-      tags: 
+      tags:
         - ahrq_measures
         - pqi
       materialized: view
@@ -398,9 +397,9 @@ models:
   - name: ahrq_measures__int_pqi_12_denom
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{% else %}ahrq_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{%- else -%}ahrq_measures{%- endif -%}
       alias: _int_pqi_12_denom
-      tags: 
+      tags:
         - ahrq_measures
         - pqi
       materialized: view
@@ -410,9 +409,9 @@ models:
   - name: ahrq_measures__int_pqi_12_exclusions
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{% else %}ahrq_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{%- else -%}ahrq_measures{%- endif -%}
       alias: _int_pqi_12_exclusions
-      tags: 
+      tags:
         - ahrq_measures
         - pqi
       materialized: view
@@ -422,9 +421,9 @@ models:
   - name: ahrq_measures__int_pqi_12_num
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{% else %}ahrq_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{%- else -%}ahrq_measures{%- endif -%}
       alias: _int_pqi_12_num
-      tags: 
+      tags:
         - ahrq_measures
         - pqi
       materialized: view
@@ -434,21 +433,21 @@ models:
   - name: ahrq_measures__int_pqi_14_denom
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{% else %}ahrq_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{%- else -%}ahrq_measures{%- endif -%}
       alias: _int_pqi_14_denom
-      tags: 
+      tags:
         - ahrq_measures
         - pqi
       materialized: view
     description: >
       Denominator for PQI 14 measure calculation.
-    
+
   - name: ahrq_measures__int_pqi_14_exclusions
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{% else %}ahrq_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{%- else -%}ahrq_measures{%- endif -%}
       alias: _int_pqi_14_exclusions
-      tags: 
+      tags:
         - ahrq_measures
         - pqi
       materialized: view
@@ -458,9 +457,9 @@ models:
   - name: ahrq_measures__int_pqi_14_num
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{% else %}ahrq_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{%- else -%}ahrq_measures{%- endif -%}
       alias: _int_pqi_14_num
-      tags: 
+      tags:
         - ahrq_measures
         - pqi
       materialized: view
@@ -470,9 +469,9 @@ models:
   - name: ahrq_measures__int_pqi_15_denom
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{% else %}ahrq_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{%- else -%}ahrq_measures{%- endif -%}
       alias: _int_pqi_15_denom
-      tags: 
+      tags:
         - ahrq_measures
         - pqi
       materialized: view
@@ -482,9 +481,9 @@ models:
   - name: ahrq_measures__int_pqi_15_exclusions
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{% else %}ahrq_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{%- else -%}ahrq_measures{%- endif -%}
       alias: _int_pqi_15_exclusions
-      tags: 
+      tags:
         - ahrq_measures
         - pqi
       materialized: view
@@ -494,9 +493,9 @@ models:
   - name: ahrq_measures__int_pqi_15_num
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{% else %}ahrq_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{%- else -%}ahrq_measures{%- endif -%}
       alias: _int_pqi_15_num
-      tags: 
+      tags:
         - ahrq_measures
         - pqi
       materialized: view
@@ -506,9 +505,9 @@ models:
   - name: ahrq_measures__int_pqi_16_denom
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{% else %}ahrq_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{%- else -%}ahrq_measures{%- endif -%}
       alias: _int_pqi_16_denom
-      tags: 
+      tags:
         - ahrq_measures
         - pqi
       materialized: view
@@ -518,9 +517,9 @@ models:
   - name: ahrq_measures__int_pqi_16_exclusions
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{% else %}ahrq_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{%- else -%}ahrq_measures{%- endif -%}
       alias: _int_pqi_16_exclusions
-      tags: 
+      tags:
         - ahrq_measures
         - pqi
       materialized: view
@@ -530,21 +529,21 @@ models:
   - name: ahrq_measures__int_pqi_16_num
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{% else %}ahrq_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{%- else -%}ahrq_measures{%- endif -%}
       alias: _int_pqi_16_num
-      tags: 
+      tags:
         - ahrq_measures
         - pqi
       materialized: view
     description: >
       Numerator for PQI 16 measure calculation.
-    
+
   - name: ahrq_measures__int_pqi_shared_exclusion_missing_age
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{% else %}ahrq_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{%- else -%}ahrq_measures{%- endif -%}
       alias: _int_pqi_shared_exclusions_missing_age
-      tags: 
+      tags:
         - ahrq_measures
         - pqi
       materialized: view
@@ -554,9 +553,9 @@ models:
   - name: ahrq_measures__int_pqi_shared_exclusion_missing_dates
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{% else %}ahrq_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{%- else -%}ahrq_measures{%- endif -%}
       alias: _int_pqi_shared_exclusion_missing_dates
-      tags: 
+      tags:
         - ahrq_measures
         - pqi
       materialized: view
@@ -566,9 +565,9 @@ models:
   - name: ahrq_measures__int_pqi_shared_exclusion_missing_gender
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{% else %}ahrq_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{%- else -%}ahrq_measures{%- endif -%}
       alias: _int_pqi_shared_exclusion_missing_gender
-      tags: 
+      tags:
         - ahrq_measures
         - pqi
       materialized: view
@@ -578,9 +577,9 @@ models:
   - name: ahrq_measures__int_pqi_shared_exclusion_missing_primary_dx
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{% else %}ahrq_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{%- else -%}ahrq_measures{%- endif -%}
       alias: _int_pqi_shared_exclusion_missing_primary_dx
-      tags: 
+      tags:
         - ahrq_measures
         - pqi
       materialized: view
@@ -590,9 +589,9 @@ models:
   - name: ahrq_measures__int_pqi_shared_exclusion_transfer
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{% else %}ahrq_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{%- else -%}ahrq_measures{%- endif -%}
       alias: _int_pqi_shared_exclusion_transfer
-      tags: 
+      tags:
         - ahrq_measures
         - pqi
       materialized: view
@@ -602,9 +601,9 @@ models:
   - name: ahrq_measures__int_pqi_shared_exclusion_ungroupable_drg
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{% else %}ahrq_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{%- else -%}ahrq_measures{%- endif -%}
       alias: _int_pqi_shared_exclusion_ungroupable_drg
-      tags: 
+      tags:
         - ahrq_measures
         - pqi
       materialized: view
@@ -614,23 +613,23 @@ models:
   - name: ahrq_measures__int_pqi_shared_exclusion_union
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{% else %}ahrq_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{%- else -%}ahrq_measures{%- endif -%}
       alias: _int_pqi_shared_exclusion_union
-      tags: 
+      tags:
         - ahrq_measures
         - pqi
       materialized: view
     description: >
       Union of all exclusion criteria used across PQI measures for consistent exclusion logic.
 
-## Staging
+  ## Staging
 
   - name: ahrq_measures__stg_pqi_inpatient_encounter
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{% else %}ahrq_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{%- else -%}ahrq_measures{%- endif -%}
       alias: _stg_pqi_inpatient_encounter
-      tags: 
+      tags:
         - ahrq_measures
         - pqi
       materialized: view
@@ -640,9 +639,9 @@ models:
   - name: ahrq_measures__stg_pqi_condition
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{% else %}ahrq_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{%- else -%}ahrq_measures{%- endif -%}
       alias: _stg_pqi_condition
-      tags: 
+      tags:
         - ahrq_measures
         - pqi
       materialized: ephemeral
@@ -652,9 +651,9 @@ models:
   - name: ahrq_measures__stg_pqi_member_months
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{% else %}ahrq_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{%- else -%}ahrq_measures{%- endif -%}
       alias: _stg_pqi_member_months
-      tags: 
+      tags:
         - ahrq_measures
         - pqi
       materialized: view
@@ -664,9 +663,9 @@ models:
   - name: ahrq_measures__stg_pqi_patient
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{% else %}ahrq_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{%- else -%}ahrq_measures{%- endif -%}
       alias: _stg_pqi_patient
-      tags: 
+      tags:
         - ahrq_measures
         - pqi
       materialized: ephemeral
@@ -676,9 +675,9 @@ models:
   - name: ahrq_measures__stg_pqi_procedure
     config:
       schema: |
-        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{% else %}ahrq_measures{%- endif -%}
+        {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ahrq_measures{%- else -%}ahrq_measures{%- endif -%}
       alias: _stg_pqi_procedure
-      tags: 
+      tags:
         - ahrq_measures
         - pqi
       materialized: ephemeral

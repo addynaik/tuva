@@ -44,7 +44,7 @@ from {{ ref('core__lab_result') }}
     , cast(null as {{ dbt.type_string() }} ) as normalized_code_type
     , cast(null as {{ dbt.type_string() }} ) as normalized_code
     , cast(null as {{ dbt.type_timestamp() }} ) as tuva_last_run
-{% else %}
+{%- else -%}
     select
       cast(null as {{ dbt.type_string() }} ) as patient_id
     , cast(null as {{ dbt.type_string() }} ) as result

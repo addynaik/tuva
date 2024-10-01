@@ -13,7 +13,7 @@ with conditions_unioned as (
     select * from {{ ref('chronic_conditions__cms_chronic_conditions_oud') }}
 
 )
-{% else %}
+{%- else -%}
 with conditions_unioned as (
 
     select * from {{ ref('chronic_conditions__cms_chronic_conditions_all') }}

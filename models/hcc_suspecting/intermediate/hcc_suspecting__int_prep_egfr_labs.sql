@@ -59,7 +59,7 @@ with lab_result as (
    {% if target.type == 'fabric' %}
         WHERE result LIKE '%.%' OR result LIKE '%[0-9]%'
         AND result NOT LIKE '%[^0-9.]%'
-    {% else %}
+    {%- else -%}
         where {{ apply_regex('result', '^[+-]?([0-9]*[.])?[0-9]+$') }}
     {% endif %}
 
@@ -86,7 +86,7 @@ with lab_result as (
     {% if target.type == 'fabric' %}
         WHERE NOT (result LIKE '%.%' OR result LIKE '%[0-9]%'
         AND result NOT LIKE '%[^0-9.]%')
-    {% else %}
+    {%- else -%}
         where {{ apply_regex('result', '^[+-]?([0-9]*[.])?[0-9]+$') }} = False
     {% endif %}
 

@@ -7,7 +7,7 @@ SELECT
       m.data_source
     {% if target.type == 'bigquery' %}
         , cast(coalesce({{ dbt.current_timestamp() }}, cast('1900-01-01' as timestamp)) as date) as source_date
-    {% else %}
+    {%- else -%}
         , cast(coalesce({{ dbt.current_timestamp() }}, cast('1900-01-01' as date)) as date) as source_date
     {% endif %}
     , 'PATIENT' AS table_name

@@ -88,7 +88,7 @@ left join {{ ref('terminology__loinc') }} loinc
     on obs.source_code_type = 'loinc'
         and obs.source_code = loinc.loinc
 
-{% else %}
+{%- else -%}
 
 select
       obs.observation_id

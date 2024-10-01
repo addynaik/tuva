@@ -5,6 +5,6 @@ models:
     config:
       schema: |
         {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_claims_expanded
-        {% else %}claims_expanded{%- endif -%}
+        {%- else -%}claims_expanded{%- endif -%}
       materialized: table
       tags: claims_expanded

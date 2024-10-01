@@ -96,7 +96,7 @@ with medical_claims as (
     where claim_type = 'institutional'
         {% if target.type == 'fabric' %}
             and YEAR(claim_end_date) = {{ collection_year }}
-        {% else %}
+        {%- else -%}
             and extract(year from claim_end_date) = {{ collection_year }}
         {% endif %}
         and substring(bill_type_code, 1, 2) in ('11','41')
@@ -120,7 +120,7 @@ with medical_claims as (
     where claim_type = 'institutional'
         {% if target.type == 'fabric' %}
             and YEAR(claim_end_date) = {{ collection_year }}
-        {% else %}
+        {%- else -%}
             and extract(year from claim_end_date) = {{ collection_year }}
         {% endif %}
         and cpt_hcpcs_list.payment_year = {{ payment_year }}

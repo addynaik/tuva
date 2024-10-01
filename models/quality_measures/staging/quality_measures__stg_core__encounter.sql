@@ -38,7 +38,7 @@ from {{ ref('core__encounter') }}
     , {{ try_to_cast_date('null', 'YYYY-MM-DD') }} as encounter_start_date
     , {{ try_to_cast_date('null', 'YYYY-MM-DD') }} as encounter_end_date
     , cast(null as {{ dbt.type_timestamp() }} ) as tuva_last_run
-{% else %}
+{%- else -%}
     select
       cast(null as {{ dbt.type_string() }} ) as patient_id
     , cast(null as {{ dbt.type_string() }} ) as encounter_id

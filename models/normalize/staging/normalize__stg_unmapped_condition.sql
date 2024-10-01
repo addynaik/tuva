@@ -27,7 +27,7 @@ where i.NORMALIZED_CODE is null and i.NORMALIZED_DESCRIPTION is null
     and custom_mapped.not_mapped is null
 group by i.SOURCE_CODE_TYPE, i.SOURCE_CODE, i.SOURCE_DESCRIPTION, i.data_source
 
-{% else %}
+{%- else -%}
 
 select i.SOURCE_CODE_TYPE, i.SOURCE_CODE, i.SOURCE_DESCRIPTION,
        count(*) as item_count,

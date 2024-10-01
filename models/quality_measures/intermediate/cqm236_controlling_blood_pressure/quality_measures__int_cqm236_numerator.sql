@@ -365,7 +365,7 @@ with controlled_bp_codes as (
         , observation_date
         {% if target.type == 'fabric' %}
             , try_cast(result as {{ dbt.type_float() }}) as bp_reading
-        {% else %}
+        {%- else -%}
         , cast(result as {{ dbt.type_float() }}) as bp_reading
         {% endif %}
         , normalized_description
@@ -385,7 +385,7 @@ with controlled_bp_codes as (
         , observation_date
         {% if target.type == 'fabric' %}
             , try_cast(result as {{ dbt.type_float() }}) as bp_reading
-        {% else %}
+        {%- else -%}
             , cast(result as {{ dbt.type_float() }}) as bp_reading
         {% endif %}
         , cast(null as {{ dbt.type_string() }}) as normalized_description

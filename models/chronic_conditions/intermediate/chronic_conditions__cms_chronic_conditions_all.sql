@@ -128,7 +128,7 @@ with chronic_conditions as (
     select * from inclusions_ms_drg
 
 )
-{% else %}
+{%- else -%}
 , inclusions_unioned as (
 
     select * from inclusions_diagnosis

@@ -36,7 +36,7 @@ with conditions as (
         , observation_date
         {% if target.type == 'fabric' %}
          , TRY_CAST(result AS {{ dbt.type_numeric() }}) AS result
-        {% else %}
+        {%- else -%}
         , CAST(result AS {{ dbt.type_numeric() }}) AS result
         {% endif %}
         , code_type
@@ -46,7 +46,7 @@ with conditions as (
    {% if target.type == 'fabric' %}
         WHERE result LIKE '%.%' OR result LIKE '%[0-9]%'
         AND result NOT LIKE '%[^0-9.]%'
-    {% else %}
+    {%- else -%}
         where {{ apply_regex('result', '^[+-]?([0-9]*[.])?[0-9]+$') }}
     {% endif %}
 
@@ -445,7 +445,7 @@ with conditions as (
         , cast(hcc_description as {{ dbt.type_string() }}) as hcc_description
         {% if target.type == 'fabric' %}
             , cast(current_year_billed as bit) as current_year_billed
-        {% else %}
+        {%- else -%}
             , cast(current_year_billed as boolean) as current_year_billed
         {% endif %}
         , cast(reason as {{ dbt.type_string() }}) as reason

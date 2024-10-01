@@ -59,7 +59,7 @@ left join {{ref('terminology__snomed_ct')}} snomed_ct
     on labs.source_code_type = 'snomed-ct'
         and labs.source_code = snomed_ct.snomed_ct
 
- {% else %}
+ {%- else -%}
 
 select
       labs.lab_result_id

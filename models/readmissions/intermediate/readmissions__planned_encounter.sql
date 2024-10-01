@@ -91,13 +91,13 @@ where acute_encounters.encounter_id is null
 select * , '{{ var('tuva_last_run')}}' as tuva_last_run from always_planned_px
 {% if target.type == 'fabric' %}
 union
-{% else %}
+{%- else -%}
 union distinct
 {% endif %}
 select *, '{{ var('tuva_last_run')}}' as tuva_last_run from always_planned_dx
 {% if target.type == 'fabric' %}
 union
-{% else %}
+{%- else -%}
 union distinct
 {% endif %}
 select *, '{{ var('tuva_last_run')}}' as tuva_last_run from potentially_planned_that_are_actually_planned

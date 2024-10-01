@@ -33,7 +33,7 @@ from {{ ref('custom_mapped') }}
 
 {% if target.type == 'fabric' %}
 union
-{% else %}
+{%- else -%}
 union distinct
 {% endif %}
 

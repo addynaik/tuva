@@ -2,13 +2,12 @@ version: 2
 
 ##  Final
 
-
 models:
   - name: ed_classification__summary
     config:
       schema: |
         {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ed_classification
-        {% else %}ed_classification{%- endif -%}
+        {%- else -%}ed_classification{%- endif -%}
       alias: summary
       tags: ed_classification
       materialized: table
@@ -59,10 +58,10 @@ models:
         description: The city of the facility.
       - name: facility_zip_code
         description: The zip code of the facility.
-#      - name: facility_latitude
-#        description: The latitude of the facility.
-#      - name: facility_longitude
-#        description: The longitude of the facility.
+      #      - name: facility_latitude
+      #        description: The latitude of the facility.
+      #      - name: facility_longitude
+      #        description: The longitude of the facility.
       - name: patient_sex
         description: The sex of the patient.
         meta:
@@ -80,38 +79,35 @@ models:
         meta:
           terminology: https://github.com/tuva-health/the_tuva_project/blob/main/seeds/terminology/terminology__race.csv
 
-
-# Intermediate
+  # Intermediate
 
   - name: ed_classification__int_filter_encounter_with_classification
     config:
       schema: |
         {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ed_classification
-        {% else %}ed_classification{%- endif -%}
+        {%- else -%}ed_classification{%- endif -%}
       alias: _int_filter_encounter_with_classification
       tags: ed_classification
       materialized: table
     description: Filter out ED visits that were not classified
 
-
   - name: ed_classification__int_map_primary_dx
     config:
       schema: |
         {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ed_classification
-        {% else %}ed_classification{%- endif -%}
+        {%- else -%}ed_classification{%- endif -%}
       alias: _int_by_provider_parent_organization
       tags: ed_classification
       materialized: table
     description: Map ED encounter primary dx to classification
 
-
-##  Staging
+  ##  Staging
 
   - name: ed_classification__stg_encounter
     config:
       schema: |
         {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ed_classification
-        {% else %}ed_classification{%- endif -%}
+        {%- else -%}ed_classification{%- endif -%}
       tags: ed_classification
       materialized: ephemeral
 
@@ -119,7 +115,6 @@ models:
     config:
       schema: |
         {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ed_classification
-        {% else %}ed_classification{%- endif -%}
+        {%- else -%}ed_classification{%- endif -%}
       tags: ed_classification
       materialized: ephemeral
-

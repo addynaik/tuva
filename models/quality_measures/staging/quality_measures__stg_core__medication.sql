@@ -44,7 +44,7 @@ from {{ ref('core__medication') }}
         , cast(null as {{ dbt.type_string() }} ) as ndc_code
         , cast(null as {{ dbt.type_string() }} ) as rxnorm_code
         , cast(null as {{ dbt.type_timestamp() }} ) as tuva_last_run
-{% else %}
+{%- else -%}
 select
           cast(null as {{ dbt.type_string() }} ) as patient_id
         , cast(null as {{ dbt.type_string() }} ) as encounter_id

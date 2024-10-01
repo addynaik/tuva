@@ -1,14 +1,13 @@
 version: 2
 
 models:
-
-### Final
+  ### Final
 
   - name: ccsr__long_condition_category
     config:
       schema: |
         {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ccsr
-        {% else %}ccsr{%- endif -%}
+        {%- else -%}ccsr{%- endif -%}
       alias: long_condition_category
       tags:
         - ccsr
@@ -87,7 +86,7 @@ models:
     config:
       schema: |
         {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ccsr
-        {% else %}ccsr{%- endif -%}
+        {%- else -%}ccsr{%- endif -%}
       alias: singular_condition_category
       tags:
         - ccsr
@@ -133,7 +132,6 @@ models:
           `dbt_utils.pretty_time` as the local time of the `dbt run` environment.  
           Timezone is configurable via the `tuva_last_run` var.
 
-
   - name: ccsr__long_procedure_category
     description: >
       This model contains a mapping of individual condition ICD-10-PCS procedure 
@@ -143,7 +141,7 @@ models:
     config:
       schema: |
         {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ccsr
-        {% else %}ccsr{%- endif -%}
+        {%- else -%}ccsr{%- endif -%}
       alias: long_procedure_category
       tags:
         - ccsr
@@ -187,13 +185,13 @@ models:
           `dbt_utils.pretty_time` as the local time of the `dbt run` environment.  
           Timezone is configurable via the `tuva_last_run` var.
 
-### Intermediate
+  ### Intermediate
 
   - name: ccsr__dx_vertical_pivot
     config:
       schema: |
         {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ccsr
-        {% else %}ccsr{%- endif -%}
+        {%- else -%}ccsr{%- endif -%}
       alias: dx_vertical_pivot
       tags:
         - ccsr
@@ -252,7 +250,7 @@ models:
     config:
       schema: |
         {%- if var('tuva_schema_prefix',None) != None -%}{{var('tuva_schema_prefix')}}_ccsr
-        {% else %}ccsr{%- endif -%}
+        {%- else -%}ccsr{%- endif -%}
       alias: procedure_category_map
       tags:
         - ccsr
@@ -285,7 +283,7 @@ models:
           `dbt_utils.pretty_time` as the local time of the `dbt run` environment.  
           Timezone is configurable via the `tuva_last_run` var.
 
-## Staging
+  ## Staging
 
   - name: ccsr__stg_core__condition
     config:

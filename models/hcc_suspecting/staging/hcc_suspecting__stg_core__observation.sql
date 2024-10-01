@@ -35,7 +35,7 @@ from {{ ref('core__observation') }}
     , cast(null as {{ dbt.type_string() }} ) as code_type
     , cast(null as {{ dbt.type_string() }} ) as code
     , cast(null as {{ dbt.type_string() }} ) as data_source
-{% else %}
+{%- else -%}
     select
           cast(null as {{ dbt.type_string() }} ) as patient_id
         , {{ try_to_cast_date('null', 'YYYY-MM-DD') }} as observation_date

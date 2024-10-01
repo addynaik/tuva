@@ -120,7 +120,7 @@ with chronic_conditions as (
     select * from exception_diagnosis
 
 )
-{% else %}
+{%- else -%}
 , inclusions_unioned as (
 
     select * from inclusions_diagnosis

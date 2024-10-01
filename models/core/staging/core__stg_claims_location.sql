@@ -11,7 +11,7 @@ from {{ ref('core__stg_claims_medical_claim') }}
 
 {% if target.type == 'fabric' %}
 union
-{% else %}
+{%- else -%}
 union distinct
 {% endif %}
 
@@ -20,7 +20,7 @@ from {{ ref('core__stg_claims_medical_claim') }}
 
 {% if target.type == 'fabric' %}
 union
-{% else %}
+{%- else -%}
 union distinct
 {% endif %}
 
@@ -29,7 +29,7 @@ from {{ ref('core__stg_claims_medical_claim') }}
 
 {% if target.type == 'fabric' %}
 union
-{% else %}
+{%- else -%}
 union distinct
 {% endif %}
 
@@ -38,7 +38,7 @@ from {{ ref('core__stg_claims_pharmacy_claim') }}
 
 {% if target.type == 'fabric' %}
 union
-{% else %}
+{%- else -%}
 union distinct
 {% endif %}
 

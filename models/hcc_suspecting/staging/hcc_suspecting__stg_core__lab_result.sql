@@ -41,7 +41,7 @@ from {{ ref('core__lab_result') }}
         , cast(null as {{ dbt.type_string() }} ) as result
         , {{ try_to_cast_date('null', 'YYYY-MM-DD') }} as result_date
         , cast(null as {{ dbt.type_string() }} ) as data_source
-{% else %}
+{%- else -%}
     select
           cast(null as {{ dbt.type_string() }} ) as lab_result_id
         , cast(null as {{ dbt.type_string() }} ) as patient_id

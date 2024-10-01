@@ -17,7 +17,7 @@ with hcc_history_suspects as (
     {% if target.type == 'fabric' %}
         where (current_year_billed = 0
             or current_year_billed is null)
-    {% else %}
+    {%- else -%}
         where (current_year_billed = false
             or current_year_billed is null)
     {% endif %}
@@ -38,7 +38,7 @@ with hcc_history_suspects as (
     {% if target.type == 'fabric' %}
         where (current_year_billed = 0
             or current_year_billed is null)
-    {% else %}
+    {%- else -%}
         where (current_year_billed = false
             or current_year_billed is null)
     {% endif %}
@@ -59,7 +59,7 @@ with hcc_history_suspects as (
     {% if target.type == 'fabric' %}
         where (current_year_billed = 0
             or current_year_billed is null)
-    {% else %}
+    {%- else -%}
         where (current_year_billed = false
             or current_year_billed is null)
     {% endif %}
@@ -80,7 +80,7 @@ with hcc_history_suspects as (
     {% if target.type == 'fabric' %}
         where (current_year_billed = 0
             or current_year_billed is null)
-    {% else %}
+    {%- else -%}
         where (current_year_billed = false
             or current_year_billed is null)
     {% endif %}
@@ -101,7 +101,7 @@ with hcc_history_suspects as (
     {% if target.type == 'fabric' %}
         where (current_year_billed = 0
             or current_year_billed is null)
-    {% else %}
+    {%- else -%}
         where (current_year_billed = false
             or current_year_billed is null)
     {% endif %}

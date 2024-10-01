@@ -82,7 +82,7 @@ with stg_eligibility as (
             or YEAR(enrollment_end_date)
                 between {{ collection_year }}
                 and {{ payment_year }}
-        {% else %}
+        {%- else -%}
             extract(year from enrollment_start_date)
                 between {{ collection_year }}
                 and {{ payment_year }}
@@ -138,7 +138,7 @@ with stg_eligibility as (
                 when add_enrollment.enrollment_status is null then 1
                 else 0
               end as enrollment_status_default
-        {% else %}
+        {%- else -%}
             , case
                 when add_enrollment.enrollment_status is null then TRUE
                 else FALSE
@@ -237,7 +237,7 @@ with stg_eligibility as (
             {% if target.type == 'fabric' %}
                 when dual_status_code is null then 1
                 else 0
-            {% else %}
+            {%- else -%}
                 when dual_status_code is null then TRUE
                 else FALSE
             {% endif %}
@@ -249,7 +249,7 @@ with stg_eligibility as (
                 when original_reason_entitlement_code is null and medicare_status_code in ('31') then 1
                 when coalesce(original_reason_entitlement_code,medicare_status_code) is null then 1
                 else 0
-            {% else %}
+            {%- else -%}
                 when original_reason_entitlement_code in ('2') then TRUE
                 when original_reason_entitlement_code is null and medicare_status_code in ('31') then TRUE
                 when coalesce(original_reason_entitlement_code,medicare_status_code) is null then TRUE
@@ -259,7 +259,7 @@ with stg_eligibility as (
         /* Setting default true until institutional logic is added */
         {% if target.type == 'fabric' %}
             , 1 as institutional_status_default
-        {% else %}
+        {%- else -%}
             , TRUE as institutional_status_default
         {% endif %}
     from add_age_group
@@ -282,7 +282,7 @@ with stg_eligibility as (
             , cast(medicaid_dual_status_default as bit) as medicaid_dual_status_default
             , cast(orec_default as bit) as orec_default
             , cast(institutional_status_default as bit) as institutional_status_default
-        {% else %}
+        {%- else -%}
             , cast(enrollment_status_default as boolean) as enrollment_status_default
             , cast(medicaid_dual_status_default as boolean) as medicaid_dual_status_default
             , cast(orec_default as boolean) as orec_default
